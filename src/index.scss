@@ -1,0 +1,46 @@
+$fontFamily: PingFang-SC, "San Francisco", "Source Sans", Rotobo, "Helvetica Neue";
+
+@mixin hlh($height) {
+  height: $height;
+  line-height: $height;
+}
+
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-family: $fontFamily;
+  font-size: 12px;
+
+  button {
+    width: 33%;
+    @include hlh(2.17em);
+    font-family: $fontFamily;
+    font-size: 2em;
+    text-align: center;
+    color: #3f3f3f;
+    border:0;
+    background-color: #fff;
+    cursor: pointer;
+    touch-action: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      background-color: #dfdfdf;
+    }
+
+    &.keyClear {
+      @include hlh(2.89em);
+      font-size: 1.5em;
+    }
+
+    &.keyX{
+      @include hlh(2.55em);
+      font-size: 1.7em;
+    }
+  }
+}
