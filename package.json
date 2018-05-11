@@ -22,6 +22,7 @@
     "css-loader": "^0.28.9",
     "digital-keyboard": "^0.0.2",
     "eslint": "^4.19.1",
+    "jsdom": "^11.10.0",
     "mocha": "^5.1.1",
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.6",
@@ -33,7 +34,7 @@
   "scripts": {
     "build": "webpack --mode production --config  ./config/webpack.config.js",
     "start": "webpack-dev-server --mode development --open 'Google Chrome' --config ./config/webpack.config.js",
-    "test": "mocha ./test/keyboard.html"
+    "test": "mocha -r ./test/keyboard.js"
   },
   "dependencies": {}
 }
