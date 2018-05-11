@@ -4,9 +4,7 @@ class DigitalKeyboard {
   constructor(options = {}){
     this.value = '';
     this.options = {
-      returnValue(value) {
-        return value
-      }
+
     };
 
     Object.assign(this.options, options);
@@ -127,7 +125,7 @@ class DigitalKeyboard {
           break;
       }
 
-      return `<button class="${className}" data-action="${item.action}" data-content="${item.content}">${item.content}</button>`
+      return `<button class="${className}" data-action="${item.action}" data-content="${item.content}">${item.content}</button>`;
     });
 
     let keyboardBox = `<div id="keyboardBox" class="${s.keyboard}">${keyboards.join('')}</div>`;
@@ -145,4 +143,4 @@ class DigitalKeyboard {
   }
 }
 
-export default DigitalKeyboard
+export default DigitalKeyboard;
