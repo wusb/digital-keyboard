@@ -33,7 +33,7 @@
   "scripts": {
     "build": "webpack --mode production --config  ./config/webpack.config.js",
     "start": "webpack-dev-server --mode development --open 'Google Chrome' --config ./config/webpack.config.js",
-    "test": "mocha ./test/index.html"
+    "test": "mocha ./test/keyboard.html"
   },
   "dependencies": {}
 }
