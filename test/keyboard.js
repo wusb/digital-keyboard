@@ -1,20 +1,30 @@
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
-global.document = new JSDOM('<!doctype html><html><body></body></html>');
-global.window = document.defaultView;
 
-var DigitalKeyboard = require('../build/Keyboard');
+const { document } = (new JSDOM(`...`)).window;
+const dom = new JSDOM('<!doctype html><html><body></body></html>');
+const { window } = new JSDOM(`...`);
+
+import DigitalKeyboard from  '../build/Keyboard';
 
 describe('mocha tests', function () {
 
-    it('has document', function () {
-        before(function () {
-            function returnValue(value){
-                document.querySelector('#values').innerHTML = value;
-            }
+    beforeEach(function() {
+        // window = global.window;
+    });
 
-            new DigitalKeyboard({el: '#app', type: 'idcard', returnValue: returnValue});
-        });
+    it('has document', function () {
+        console.log('-----+++++');
+        function returnValue(value){
+            document.querySelector('#values').innerHTML = value;
+        }
+
+        console.log('---------');
+        console.log(window);
+
+
+
+        new DigitalKeyboard({el: '#app', type: 'idcard', returnValue: returnValue});
     });
 
 });
