@@ -1,30 +1,40 @@
-const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
+const { JSDOM } = require('jsdom');
+const { window } = new JSDOM(`<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+        <meta name="author" content="吴胜斌,simbawu">
+        <title>数字键盘</title>
+    </head>
+    <body>
+    <div id="values"></div>
+    <div id="app"></div>
+    </body>
+    </html>`);
 
-const { document } = (new JSDOM(`...`)).window;
-const dom = new JSDOM('<!doctype html><html><body></body></html>');
-const { window } = new JSDOM(`...`);
+propagateToGlobal(window);
 
-import DigitalKeyboard from  '../build/Keyboard';
+function propagateToGlobal (window) {
+    for (let key in window) {
+        if (!window.hasOwnProperty(key)) continue;
+        if (key in global) continue;
+        global[key] = window[key];
+    }
+}
+
+const KeyboardModule = require('../build/Keyboard');
+const DigitalKeyboard = KeyboardModule.default;
 
 describe('mocha tests', function () {
 
-    beforeEach(function() {
-        // window = global.window;
-    });
-
     it('has document', function () {
-        console.log('-----+++++');
         function returnValue(value){
             document.querySelector('#values').innerHTML = value;
         }
-
-        console.log('---------');
-        console.log(window);
-
-
 
         new DigitalKeyboard({el: '#app', type: 'idcard', returnValue: returnValue});
     });
 
 });
+
