@@ -4,4 +4,4 @@ function returnValue(value){
   document.querySelector('#values').innerHTML = value;
 }
 
-new DigitalKeyboard({el: '#app', type: 'idcard', returnValue: returnValue});
+new DigitalKeyboard({el: document.querySelector('#app'), type: 'idcard', returnValue: returnValue});

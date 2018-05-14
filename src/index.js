@@ -110,7 +110,7 @@ class DigitalKeyboard {
     ];
   }
 
-  _renderKeyboard(targetId){
+  _renderKeyboard(container){
     let className = '';
     let keyboards = this.items.map((item, index) => {
       switch (item.content){
@@ -130,7 +130,7 @@ class DigitalKeyboard {
 
     let keyboardBox = `<div id="keyboardBox" class="${s.keyboard}">${keyboards.join('')}</div>`;
 
-    document.querySelector(targetId).innerHTML = keyboardBox;
+    container.innerHTML = keyboardBox;
     document.querySelector('#keyboardBox').addEventListener('click', (e) => {
       let {action, content} = e.target.dataset;
       this.handleClick(action, content);
