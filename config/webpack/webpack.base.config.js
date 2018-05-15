@@ -2,10 +2,6 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: {
-    app: ['./src/main.js'],
-    Keyboard: ['./src/index.js']
-  },
   output: {
     path: path.resolve(__dirname, '../build'),
     filename: '[name].js',
@@ -39,13 +35,8 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ],
-  devServer: {
-    inline: true,
-    hot: true,
-    host: '0.0.0.0',
-    historyApiFallback: true,
-    port: process.env.PORT || 8101
-  }
+    new webpack.DefinePlugin({ // 定义环境变量
+      "process.env": JSON.stringify(process.env.NODE_ENV)
+    }),
+  ]
 };

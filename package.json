@@ -21,6 +21,7 @@
     "babel-preset-env": "^1.6.1",
     "chai": "^4.1.2",
     "coveralls": "^3.0.1",
+    "cross-env": "^5.1.5",
     "css-loader": "^0.28.9",
     "digital-keyboard": "^0.0.5",
     "eslint": "^4.19.1",
@@ -32,11 +33,12 @@
     "style-loader": "^0.20.1",
     "webpack": "^4.8.1",
     "webpack-cli": "^2.1.3",
-    "webpack-dev-server": "^3.1.4"
+    "webpack-dev-server": "^3.1.4",
+    "webpack-merge": "^4.1.2"
   },
   "scripts": {
-    "build": "webpack --mode production --config  ./config/webpack.config.js",
-    "start": "webpack-dev-server --mode development --open 'Google Chrome' --config ./config/webpack.config.js",
+    "build": "cross-env NODE_ENV=production webpack --mode production --config  ./config/webpack/webpack.config.js",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open 'Google Chrome' --config ./config/webpack/webpack.config.js",
     "test": "node ./node_modules/mocha/bin/mocha --compilers js:babel-core/register ./test/Keyboard.test.js",
     "cover": "istanbul cover ./node_modules/mocha/bin/_mocha",
     "coveralls": "yarn cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
