@@ -19,9 +19,11 @@
     "babel-loader": "^7.1.2",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "coveralls": "^3.0.1",
     "css-loader": "^0.28.9",
     "digital-keyboard": "^0.0.2",
     "eslint": "^4.19.1",
+    "istanbul": "^0.4.5",
     "jsdom": "^11.10.0",
     "mocha": "^5.1.1",
     "node-sass": "^4.7.2",
@@ -34,7 +36,8 @@
   "scripts": {
     "build": "webpack --mode production --config  ./config/webpack.config.js",
     "start": "webpack-dev-server --mode development --open 'Google Chrome' --config ./config/webpack.config.js",
-    "test": "node ./node_modules/mocha/bin/mocha --compilers js:babel-core/register ./test/Keyboard.test.js"
-  },
-  "dependencies": {}
+    "test": "node ./node_modules/mocha/bin/mocha --compilers js:babel-core/register ./test/Keyboard.test.js",
+    "cover": "istanbul cover ./node_modules/mocha/bin/_mocha",
+    "coveralls": "yarn cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
+  }
 }
