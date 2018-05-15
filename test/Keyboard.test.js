@@ -28,72 +28,70 @@ const DigitalKeyboard = require('../build/Keyboard').default;
 
 describe('mocha tests', function () {
 
-  let returnValue, currentValue = '';
+  let returnValue, currentValue = '', tempValue = '';
 
   before(function () {
     returnValue = function (value) {
       document.querySelector('#values').innerHTML = value;
       currentValue = value;
     };
-
-    new DigitalKeyboard({el: document.querySelector('#app'), type: 'idcard', returnValue: returnValue});
   });
 
-  it('render correct', function () {
-    ['idcard', 'number', 'phone', 'normal'].forEach(function (item, index) {
-      switch (item) {
+  ['idcard', 'number', 'phone', 'normal'].forEach(function (keyboardType, index) {
+    it('render correct', function () {
+      tempValue = '';
+      switch (keyboardType) {
         case 'number':
-          new DigitalKeyboard({el: document.querySelector('#app'), type: item, returnValue: returnValue});
+          new DigitalKeyboard({el: document.querySelector('#app'), type: keyboardType, returnValue: returnValue});
           expect(document.querySelectorAll('#keyboardBox button')[9].innerHTML).be.equal('清空');
           break;
         case 'phone':
-          new DigitalKeyboard({el: document.querySelector('#app'), type: item, returnValue: returnValue});
+          new DigitalKeyboard({el: document.querySelector('#app'), type: keyboardType, returnValue: returnValue});
           expect(document.querySelectorAll('#keyboardBox button')[9].innerHTML).be.equal('清空');
           break;
         case 'idcard':
-          new DigitalKeyboard({el: document.querySelector('#app'), type: item, returnValue: returnValue});
+          new DigitalKeyboard({el: document.querySelector('#app'), type: keyboardType, returnValue: returnValue});
           expect(document.querySelectorAll('#keyboardBox button')[9].innerHTML).be.equal('X');
           break;
         default:
-          new DigitalKeyboard({el: document.querySelector('#app'), type: item, returnValue: returnValue});
+          new DigitalKeyboard({el: document.querySelector('#app'), type: keyboardType, returnValue: returnValue});
           expect(document.querySelectorAll('#keyboardBox button')[9].innerHTML).be.equal('.');
           break;
       }
     });
-  });
 
-  it('get correct value', function () {
-    let tempValue = '';
-
-    document.querySelectorAll('#keyboardBox button').forEach(function (item, index) {
-      item.click();
-      let content = item.getAttribute('data-content');
-      switch (item.getAttribute('data-action')) {
-        case 'delete':
-          tempValue = tempValue.substr(0, tempValue.length - 1);
-          break;
-        case 'clear':
-          tempValue = '';
-          break;
-        default:
-          switch ('idcard') {
-            case 'phone':
-              if (tempValue.length < 11) {
+    it('get correct value', function () {
+      document.querySelectorAll('#keyboardBox button').forEach(function (itemKey, index) {
+        itemKey.click();
+        let action = itemKey.getAttribute('data-action'), content = itemKey.getAttribute('data-content');
+        switch (action) {
+          case 'delete':
+            tempValue = tempValue.substr(0, tempValue.length - 1);
+            break;
+          case 'clear':
+            tempValue = '';
+            break;
+          default:
+            switch (keyboardType) {
+              case 'phone':
+                if (tempValue.length < 11) {
+                  tempValue += content;
+                }
+                break;
+              case 'idcard':
+                if (tempValue.length < 18) {
+                  tempValue += content;
+                }
+                break;
+              default:
                 tempValue += content;
-              }
-              break;
-            case 'idcard':
-              if (tempValue.length < 18) {
-                tempValue += content;
-              }
-              break;
-            default:
-              tempValue += content;
-          }
-          break;
-      }
-      expect(currentValue).to.be.equal(tempValue);
+            }
+            break;
+        }
+        expect(currentValue).to.be.equal(tempValue);
+      });
     });
+
   });
 
 });
