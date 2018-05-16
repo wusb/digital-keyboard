@@ -17,15 +17,15 @@
   <tbody>
     <tr>
       <td align="center" valign="middle">
-        <img width="200px" src="https://i.loli.net/2018/05/16/5afc5360a4c21.jpg">
+        <img width="240px" src="https://i.loli.net/2018/05/16/5afc5360a4c21.jpg">
         <p>defalult</p>
       </td>
       <td align="center" valign="middle">
-        <img width="200px" src="https://i.loli.net/2018/05/16/5afc5360c3984.jpg">
+        <img width="240px" src="https://i.loli.net/2018/05/17/5afc59314b61c.jpg">
         <p>integer/phone</p>
       </td>
       <td align="center" valign="middle">
-        <img width="200px" src="https://i.loli.net/2018/05/16/5afc5360c635f.jpg">
+        <img width="240px" src="https://i.loli.net/2018/05/16/5afc5360c635f.jpg">
         <p>idcard</p>
       </td>
     </tr>
