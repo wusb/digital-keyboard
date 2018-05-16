@@ -18,7 +18,7 @@
     <tr>
       <td align="center" valign="middle">
         <img width="240px" src="https://i.loli.net/2018/05/16/5afc5360a4c21.jpg">
-        <p>defalult</p>
+        <p>decimal</p>
       </td>
       <td align="center" valign="middle">
         <img width="240px" src="https://i.loli.net/2018/05/17/5afc59314b61c.jpg">
@@ -31,6 +31,14 @@
     </tr>
   </tbody>
 </table>
+
+## PropTypes
+
+| Property        | Type     | Default      | Description           |
+| :-------------- | :------- | :----------- | :-------------------- |
+| el | DOM |  | 键盘父节点  |
+| type  | String   | decimal | 键盘类型：decimal小数，integer整数，phone手机号，idcard身份证 |
+| inputValue    | Function   |  | 键盘输入返回值      |
 
 ## Getting Started 开始上手
 
