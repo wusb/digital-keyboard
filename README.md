@@ -106,7 +106,7 @@ class KeyboardPage extends React.Component {
   }
     
   inputValue(value){
-	console.log(value); //DigitalKeyboard return value
+    console.log(value); //DigitalKeyboard return value
   }
 
   _renderKeyboard(){
@@ -150,9 +150,10 @@ export default {
             inputValue: this.inputValue
           }
         );
-	},
+    },
+     
     inputValue(value) {
-		console.log(value); //DigitalKeyboard return value
+      console.log(value); //DigitalKeyboard return value
     }
   }
 }
