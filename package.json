@@ -1,6 +1,6 @@
 {
   "name": "digital-keyboard",
-  "version": "0.0.6",
+  "version": "1.0.0",
   "main": "build/Keyboard.js",
   "repository": "https://github.com/simbawus/DigitalKeyboard.git",
   "author": "Simbawu <connect@simbawu.com>",
@@ -23,7 +23,7 @@
     "coveralls": "^3.0.1",
     "cross-env": "^5.1.5",
     "css-loader": "^0.28.9",
-    "digital-keyboard": "^0.0.5",
+    "digital-keyboard": "^1.0.0",
     "eslint": "^4.19.1",
     "istanbul": "^0.4.5",
     "jsdom": "^11.10.0",
