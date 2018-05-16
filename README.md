@@ -17,7 +17,7 @@ yarn add digital-keyboard --dev
 
 ### Usage Example
 
-#### 原生 JavaScript
+- **原生 JavaScript**
 
 ```html
 <!DOCTYPE html>
@@ -52,7 +52,7 @@ new DigitalKeyboard(
 );
 ```
 
-#### React
+- **React**
 
 ```jsx
 import React from 'react';
@@ -94,7 +94,7 @@ class KeyboardPage extends React.Component {
 export default KeyboardPage;
 ```
 
-#### Vue
+- **Vue**
 
 ```js
 <template>
