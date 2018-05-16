@@ -40,13 +40,13 @@ class DigitalKeyboard {
         break;
     }
 
-    options.returnValue(this.value);
+    options.inputValue(this.value);
   }
 
   initKeys(type){
     let typeKey = {};
     switch (type){
-      case 'number':
+      case 'integer':
         typeKey = {
           content: '清空',
           action: 'clear'

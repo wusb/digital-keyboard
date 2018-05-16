@@ -28,33 +28,33 @@ const DigitalKeyboard = require('../build/Keyboard').default;
 
 describe('mocha tests', function () {
 
-  let returnValue, currentValue = '', tempValue = '';
+  let inputValue, currentValue = '', tempValue = '';
 
   before(function () {
-    returnValue = function (value) {
+    inputValue = function (value) {
       document.querySelector('#values').innerHTML = value;
       currentValue = value;
     };
   });
 
-  ['idcard', 'number', 'phone', 'normal'].forEach(function (keyboardType, index) {
+  ['idcard', 'integer', 'phone', 'normal'].forEach(function (keyboardType, index) {
     it('render correct', function () {
       tempValue = '';
       switch (keyboardType) {
-        case 'number':
-          new DigitalKeyboard({el: document.querySelector('#app'), type: keyboardType, returnValue: returnValue});
+        case 'integer':
+          new DigitalKeyboard({el: document.querySelector('#app'), type: keyboardType, inputValue: inputValue});
           expect(document.querySelectorAll('#keyboardBox button')[9].innerHTML).be.equal('清空');
           break;
         case 'phone':
-          new DigitalKeyboard({el: document.querySelector('#app'), type: keyboardType, returnValue: returnValue});
+          new DigitalKeyboard({el: document.querySelector('#app'), type: keyboardType, inputValue: inputValue});
           expect(document.querySelectorAll('#keyboardBox button')[9].innerHTML).be.equal('清空');
           break;
         case 'idcard':
-          new DigitalKeyboard({el: document.querySelector('#app'), type: keyboardType, returnValue: returnValue});
+          new DigitalKeyboard({el: document.querySelector('#app'), type: keyboardType, inputValue: inputValue});
           expect(document.querySelectorAll('#keyboardBox button')[9].innerHTML).be.equal('X');
           break;
         default:
-          new DigitalKeyboard({el: document.querySelector('#app'), type: keyboardType, returnValue: returnValue});
+          new DigitalKeyboard({el: document.querySelector('#app'), type: keyboardType, inputValue: inputValue});
           expect(document.querySelectorAll('#keyboardBox button')[9].innerHTML).be.equal('.');
           break;
       }
