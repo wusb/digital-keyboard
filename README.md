@@ -30,12 +30,13 @@ yarn add digital-keyboard --dev
 <body>
   <div id="values"></div>
   <div id="app"></div>
-  <script src="/digitalKeyboard.js"></script>
+  <script src="./digitalKeyboard.js"></script>
 </body>
 </html>
 ```
 
 ```javascript
+//digitalKeyboard.js
 import DigitalKeyboard from 'digital-keyboard';
 
 function inputValue(value){
