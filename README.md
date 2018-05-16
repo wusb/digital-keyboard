@@ -1,5 +1,7 @@
 # DigitalKeyboard 数字键盘
-轻量级、无依赖数字键盘
+- 原生js开发、不依赖任何框架和库的轻量级移动端数字键盘
+- 支持身份证、手机号、整数、小数多类型输入
+- API简洁，非常好上手
 
 [![Build Status](https://travis-ci.org/simbawus/DigitalKeyboard.svg?branch=master)](https://travis-ci.org/simbawus/DigitalKeyboard)
 [![Coverage Status](https://coveralls.io/repos/github/simbawus/DigitalKeyboard/badge.svg?branch=master)](https://coveralls.io/github/simbawus/DigitalKeyboard?branch=master)
@@ -9,7 +11,28 @@
 
 [![Example](https://i.loli.net/2018/05/16/5afc5086957b3.gif)](https://i.loli.net/2018/05/16/5afc5086957b3.gif)
 
-## Getting Started
+## Type 键盘类型
+
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="middle">
+        <img width="170px" src="https://i.loli.net/2018/05/16/5afc5360a4c21.jpg">
+        <span>defalult</span>
+      </td>
+      <td align="center" valign="middle">
+        <img width="170px" src="https://i.loli.net/2018/05/16/5afc5360c3984.jpg">
+        <span>integer/phone</span>
+      </td>
+      <td align="center" valign="middle">
+        <img width="170px" src="https://i.loli.net/2018/05/16/5afc5360c635f.jpg">
+        <span>idcard</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+## Getting Started 开始上手
 
 ### Install
 
