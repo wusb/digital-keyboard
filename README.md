@@ -17,16 +17,16 @@
   <tbody>
     <tr>
       <td align="center" valign="middle">
-        <img width="170px" src="https://i.loli.net/2018/05/16/5afc5360a4c21.jpg">
-        <span>defalult</span>
+        <img width="200px" src="https://i.loli.net/2018/05/16/5afc5360a4c21.jpg">
+        <p>defalult</p>
       </td>
       <td align="center" valign="middle">
-        <img width="170px" src="https://i.loli.net/2018/05/16/5afc5360c3984.jpg">
-        <span>integer/phone</span>
+        <img width="200px" src="https://i.loli.net/2018/05/16/5afc5360c3984.jpg">
+        <p>integer/phone</p>
       </td>
       <td align="center" valign="middle">
-        <img width="170px" src="https://i.loli.net/2018/05/16/5afc5360c635f.jpg">
-        <span>idcard</span>
+        <img width="200px" src="https://i.loli.net/2018/05/16/5afc5360c635f.jpg">
+        <p>idcard</p>
       </td>
     </tr>
   </tbody>
