@@ -1,4 +1,4 @@
-import s from './index.scss';
+import s from './Keyboard.scss';
 
 class DigitalKeyboard {
   constructor(options = {}){
