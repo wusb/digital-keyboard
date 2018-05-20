@@ -120,6 +120,9 @@ class DigitalKeyboard {
         case '清空':
           className = s.keyClear;
           break;
+        case '&larr;':
+          className = s.keyDelete;
+          break;
         default:
           className = '';
           break;

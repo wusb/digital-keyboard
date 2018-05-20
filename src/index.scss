@@ -38,6 +38,10 @@ $fontFamily: PingFang-SC, "San Francisco", "Source Sans", Rotobo, "Helvetica Neu
       font-size: 1.5em;
     }
 
+    &.keyDelete{
+      font-weight: bold;
+    }
+
     &.keyX{
       @include hlh(2.55em);
       font-size: 1.7em;
