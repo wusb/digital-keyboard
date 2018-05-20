@@ -13,7 +13,7 @@ $fontFamily: PingFang-SC, "San Francisco", "Source Sans", Rotobo, "Helvetica Neu
   font-size: 12px;
 
   button {
-    width: 33%;
+    width: calc(100% /3);
     @include hlh(2.17em);
     font-family: $fontFamily;
     font-size: 2em;
