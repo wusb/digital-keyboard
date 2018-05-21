@@ -8,14 +8,14 @@
 
 ###### [中文README](README-zh_CN.md)
 
-- 原生js开发、不依赖任何框架和库的轻量级移动端数字键盘
-- 支持身份证、手机号、整数、小数多类型输入
-- API简洁，非常好上手
-- 开发总结：[手把手教你发布一个无依赖多类型高质量的键盘npm包](https://github.com/simbawus/blog/issues/12)
+- Develop with native javascript, doesn't rely on any frameworks and libraries.
+- Support ID card, mobile number, integer, decimal, etc.
+- Easy API,easy use.
+- Development summary：[How to release a Digital Keyboard npm package](https://github.com/simbawus/blog/issues/12)
 
 [![Example](https://i.loli.net/2018/05/16/5afc5086957b3.gif)](https://i.loli.net/2018/05/16/5afc5086957b3.gif)
 
-## Type 键盘类型
+## Type
 
 <table>
   <tbody>
@@ -40,11 +40,11 @@
 
 | Property        | Type     | Default      | Description           |
 | :-------------- | :------- | :----------- | :-------------------- |
-| el | DOM |  | 键盘父节点  |
-| type  | String   | decimal | 键盘类型：decimal小数，integer整数，phone手机号，idcard身份证 |
-| inputValue    | Function   |  | 键盘输入返回值      |
+| el | DOM |  | parent node  | 
+| type  | String   | decimal | decimal，integer，phone，idcard |
+| inputValue    | Function   |  |  return keyboard value      |
 
-## Getting Started 开始上手
+## Getting Started
 
 ### Install
 
@@ -54,15 +54,15 @@ yarn add digital-keyboard --dev
 
 ### Usage Example
 
-- **原生 JavaScript**
+- **Native JavaScript**
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
-  <meta name="author" content="吴胜斌,simbawu">
-  <title>数字键盘</title>
+  <meta name="author" content="simbawu">
+  <title>Digital Keyboard</title>
 </head>
 <body>
   <div id="values"></div>
