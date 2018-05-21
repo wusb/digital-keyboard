@@ -1,4 +1,4 @@
-# Digital Keyboard 数字键盘
+# Digital Keyboard
 
 [![Build Status](https://travis-ci.org/simbawus/DigitalKeyboard.svg?branch=master)](https://travis-ci.org/simbawus/DigitalKeyboard)
 [![Coverage Status](https://coveralls.io/repos/github/simbawus/DigitalKeyboard/badge.svg?branch=master)](https://coveralls.io/github/simbawus/DigitalKeyboard?branch=master)
@@ -10,8 +10,8 @@
 
 - Develop with native javascript, doesn't rely on any frameworks and libraries.
 - Support ID card, mobile number, integer, decimal, etc.
-- Easy API,easy use.
-- Development summary：[How to release a Digital Keyboard npm package](https://github.com/simbawus/blog/issues/12)
+- Easy API, easy use.
+- Development summary：[How to release a Digital Keyboard npm package](https://github.com/simbawus/blog/issues/12).
 
 [![Example](https://i.loli.net/2018/05/16/5afc5086957b3.gif)](https://i.loli.net/2018/05/16/5afc5086957b3.gif)
 
