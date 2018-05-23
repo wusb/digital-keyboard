@@ -131,7 +131,7 @@ class DigitalKeyboard {
       return `<button class="${className}" data-action="${item.action}" data-content="${item.content}">${item.content}</button>`;
     });
 
-    let keyboardBox = `<div id="keyboardBox" class="${s.keyboard}">${keyboards.join('')}</div>`;
+    let keyboardBox = `<div id="keyboardBox" class="${s.keyboard} ${this.options.className}">${keyboards.join('')}</div>`;
 
     container.innerHTML = keyboardBox;
     document.querySelector('#keyboardBox').addEventListener('click', (e) => {
