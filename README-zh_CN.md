@@ -64,6 +64,11 @@ yarn add digital-keyboard --dev
   <meta charset="UTF-8">
   <meta name="author" content="吴胜斌,simbawu">
   <title>数字键盘</title>
+  <style>
+    .container {
+      color: #333;
+    }
+  </style>
 </head>
 <body>
   <div id="values"></div>
@@ -76,7 +81,6 @@ yarn add digital-keyboard --dev
 ```javascript
 //digitalKeyboard.js
 import DigitalKeyboard from 'digital-keyboard';
-import s from './digitalKeyboard.scss;
 
 function inputValue(value){
   console.log(value); //DigitalKeyboard return value
@@ -87,7 +91,7 @@ new DigitalKeyboard(
     {
         el: document.querySelector('#app'), 
         type: 'idcard', 
-        className: s.container,
+        className: 'container',
         inputValue: inputValue
     }
 );
