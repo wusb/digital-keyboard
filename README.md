@@ -41,6 +41,7 @@
 | Property        | Type     | Default      | Description           |
 | :-------------- | :------- | :----------- | :-------------------- |
 | el | DOM |  | parent node  | 
+| className | String |  | additonal class to control keyboard's style | 
 | type  | String   | decimal | decimal，integer，phone，idcard |
 | inputValue    | Function   |  |  return keyboard value      |
 
@@ -75,6 +76,7 @@ yarn add digital-keyboard --dev
 ```javascript
 //digitalKeyboard.js
 import DigitalKeyboard from 'digital-keyboard';
+import s from './digitalKeyboard.scss;
 
 function inputValue(value){
   console.log(value); //DigitalKeyboard return value
@@ -84,6 +86,7 @@ function inputValue(value){
 new DigitalKeyboard(
     {
         el: document.querySelector('#app'), 
+        className: s.container,
         type: 'idcard', 
         inputValue: inputValue
     }
@@ -95,6 +98,7 @@ new DigitalKeyboard(
 ```jsx
 import React from 'react';
 import DigitalKeyboard from "digital-keyboard";
+import s from './digitalKeyboard.scss;
 class KeyboardPage extends React.Component {
 
   constructor(){
@@ -116,6 +120,7 @@ class KeyboardPage extends React.Component {
     return new DigitalKeyboard (
       {
         el: this.refs.digitalKeyboard,
+        className: s.container,
         type: 'number',
         inputValue: this.inputValue
       }
@@ -138,6 +143,11 @@ export default KeyboardPage;
 <template>
   <div></div>
 </template>
+<style scoped lang="less">
+    .container {
+        color: #333;
+    }
+</style>
 <script>
 import DigitalKeyboard from "digital-keyboard";
 export default {
@@ -149,6 +159,7 @@ export default {
     	return new DigitalKeyboard (
           {
             el: this.$el,
+            className: 'container',
             type: 'number',
             inputValue: this.inputValue
           }
