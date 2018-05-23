@@ -64,6 +64,11 @@ yarn add digital-keyboard --dev
   <meta charset="UTF-8">
   <meta name="author" content="simbawu">
   <title>Digital Keyboard</title>
+  <style>
+    .container {
+      color: #333;
+    }
+  </style>
 </head>
 <body>
   <div id="values"></div>
@@ -76,7 +81,6 @@ yarn add digital-keyboard --dev
 ```javascript
 //digitalKeyboard.js
 import DigitalKeyboard from 'digital-keyboard';
-import s from './digitalKeyboard.scss;
 
 function inputValue(value){
   console.log(value); //DigitalKeyboard return value
@@ -86,7 +90,7 @@ function inputValue(value){
 new DigitalKeyboard(
     {
         el: document.querySelector('#app'), 
-        className: s.container,
+        className: 'container',
         type: 'idcard', 
         inputValue: inputValue
     }
@@ -99,6 +103,7 @@ new DigitalKeyboard(
 import React from 'react';
 import DigitalKeyboard from "digital-keyboard";
 import s from './digitalKeyboard.scss;
+
 class KeyboardPage extends React.Component {
 
   constructor(){
