@@ -2198,9 +2198,9 @@ diffie-hellman@^5.0.0:
     miller-rabin "^4.0.0"
     randombytes "^2.0.0"
 
-digital-keyboard@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/digital-keyboard/-/digital-keyboard-1.0.0.tgz#3a46bfc6b1954c7cfb04e96c661db34e2fcd407d"
+digital-keyboard@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/digital-keyboard/-/digital-keyboard-1.0.3.tgz#0dd926a8299897d592a6ec1ae2f053b10f3773d6"
 
 dir-glob@^2.0.0:
   version "2.0.0"
