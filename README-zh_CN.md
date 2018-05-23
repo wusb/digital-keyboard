@@ -41,6 +41,7 @@
 | Property        | Type     | Default      | Description           |
 | :-------------- | :------- | :----------- | :-------------------- |
 | el | DOM |  | 键盘父节点  |
+| className | String |  | 外部传入可控制键盘样式的class |
 | type  | String   | decimal | 键盘类型：decimal小数，integer整数，phone手机号，idcard身份证 |
 | inputValue    | Function   |  | 键盘输入返回值      |
 
@@ -75,6 +76,7 @@ yarn add digital-keyboard --dev
 ```javascript
 //digitalKeyboard.js
 import DigitalKeyboard from 'digital-keyboard';
+import s from './digitalKeyboard.scss;
 
 function inputValue(value){
   console.log(value); //DigitalKeyboard return value
@@ -85,6 +87,7 @@ new DigitalKeyboard(
     {
         el: document.querySelector('#app'), 
         type: 'idcard', 
+        className: s.container,
         inputValue: inputValue
     }
 );
@@ -95,6 +98,8 @@ new DigitalKeyboard(
 ```jsx
 import React from 'react';
 import DigitalKeyboard from "digital-keyboard";
+import s from './digitalKeyboard.scss;
+
 class KeyboardPage extends React.Component {
 
   constructor(){
@@ -116,6 +121,7 @@ class KeyboardPage extends React.Component {
     return new DigitalKeyboard (
       {
         el: this.refs.digitalKeyboard,
+        className: s.container,
         type: 'number',
         inputValue: this.inputValue
       }
@@ -138,6 +144,11 @@ export default KeyboardPage;
 <template>
   <div></div>
 </template>
+<style scoped lang="less">
+    .container {
+        color: #333;
+    }
+</style>
 <script>
 import DigitalKeyboard from "digital-keyboard";
 export default {
@@ -149,6 +160,7 @@ export default {
     	return new DigitalKeyboard (
           {
             el: this.$el,
+            className: 'container',
             type: 'number',
             inputValue: this.inputValue
           }
