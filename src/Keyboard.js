@@ -131,13 +131,15 @@ class DigitalKeyboard {
       return `<button ontouchstart="" class="${className}" data-action="${item.action}" data-content="${item.content}">${item.content}</button>`;
     });
 
-    let keyboardBox = `<div id="keyboardBox" class="${s.keyboard} ${this.options.className}">${keyboards.join('')}</div>`;
+    const keyboardBox = document.createElement('div');
+          keyboardBox.className = `${s.keyboard} ${this.options.className}`;
+          keyboardBox.innerHTML = keyboards.join('');
+          keyboardBox.addEventListener('click', (e) => {
+            let {action, content} = e.target.dataset;
+            this.handleClick(action, content);
+          });
 
-    container.innerHTML = keyboardBox;
-    document.querySelector('#keyboardBox').addEventListener('click', (e) => {
-      let {action, content} = e.target.dataset;
-      this.handleClick(action, content);
-    });
+    container.appendChild(keyboardBox);
   }
 
   init(options){
