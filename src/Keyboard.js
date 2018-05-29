@@ -128,7 +128,7 @@ class DigitalKeyboard {
           break;
       }
 
-      return `<button class="${className}" data-action="${item.action}" data-content="${item.content}">${item.content}</button>`;
+      return `<button ontouchstart="" class="${className}" data-action="${item.action}" data-content="${item.content}">${item.content}</button>`;
     });
 
     let keyboardBox = `<div id="keyboardBox" class="${s.keyboard} ${this.options.className}">${keyboards.join('')}</div>`;
