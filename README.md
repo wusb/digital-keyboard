@@ -40,10 +40,12 @@
 
 | Property        | Type     | Default      | Description           |
 | :-------------- | :------- | :----------- | :-------------------- |
-| el | DOM |  | parent node  | 
-| className | String |  | additonal class to control keyboard's style | 
+| el | DOM |  | parent node  |
+| className | String |  | additonal class to control keyboard's style |
 | type  | String   | decimal | decimal，integer，phone，idcard |
 | inputValue    | Function   |  |  return keyboard value      |
+| integerDigits | Number |  | limit integer digits |
+| decimalDigits | Number |  | limit decimal digits |
 
 ## Getting Started
 
@@ -89,10 +91,12 @@ function inputValue(value){
 
 new DigitalKeyboard(
     {
-        el: document.querySelector('#app'), 
+        el: document.querySelector('#app'),
         className: 'container',
-        type: 'idcard', 
-        inputValue: inputValue
+        type: 'idcard',
+        inputValue: inputValue,
+        integerDigits: 4,
+        decimalDigits: 2
     }
 );
 ```
@@ -116,7 +120,7 @@ class KeyboardPage extends React.Component {
   componentDidMount(){
     this._renderKeyboard();
   }
-    
+
   inputValue(value){
     console.log(value); //DigitalKeyboard return value
   }
@@ -127,7 +131,9 @@ class KeyboardPage extends React.Component {
         el: this.refs.digitalKeyboard,
         className: s.container,
         type: 'number',
-        inputValue: this.inputValue
+        inputValue: this.inputValue,
+        integerDigits: 4,
+        decimalDigits: 2
       }
     );
   }
@@ -166,11 +172,13 @@ export default {
             el: this.$el,
             className: 'container',
             type: 'number',
-            inputValue: this.inputValue
+            inputValue: this.inputValue,
+            integerDigits: 4,
+            decimalDigits: 2
           }
         );
     },
-     
+
     inputValue(value) {
       console.log(value); //DigitalKeyboard return value
     }

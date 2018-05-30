@@ -44,6 +44,8 @@
 | className | String |  | 外部传入可控制键盘样式的class |
 | type  | String   | decimal | 键盘类型：decimal小数，integer整数，phone手机号，idcard身份证 |
 | inputValue    | Function   |  | 键盘输入返回值      |
+| integerDigits | Number |  |  限制整数位数 |
+| decimalDigits | Number |  |  限制小数位数 |
 
 ## 开始上手
 
@@ -89,10 +91,12 @@ function inputValue(value){
 
 new DigitalKeyboard(
     {
-        el: document.querySelector('#app'), 
-        type: 'idcard', 
+        el: document.querySelector('#app'),
+        type: 'idcard',
         className: 'container',
-        inputValue: inputValue
+        inputValue: inputValue,
+        integerDigits: 4,
+        decimalDigits: 2
     }
 );
 ```
@@ -116,7 +120,7 @@ class KeyboardPage extends React.Component {
   componentDidMount(){
     this._renderKeyboard();
   }
-    
+
   inputValue(value){
     console.log(value); //DigitalKeyboard return value
   }
@@ -127,7 +131,9 @@ class KeyboardPage extends React.Component {
         el: this.refs.digitalKeyboard,
         className: s.container,
         type: 'number',
-        inputValue: this.inputValue
+        inputValue: this.inputValue,
+        integerDigits: 4,
+        decimalDigits: 2
       }
     );
   }
@@ -166,11 +172,13 @@ export default {
             el: this.$el,
             className: 'container',
             type: 'number',
-            inputValue: this.inputValue
+            inputValue: this.inputValue,
+            integerDigits: 4,
+            decimalDigits: 2
           }
         );
     },
-     
+
     inputValue(value) {
       console.log(value); //DigitalKeyboard return value
     }
