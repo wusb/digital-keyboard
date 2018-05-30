@@ -43,25 +43,25 @@ describe('mocha tests', function () {
       switch (keyboardType) {
         case 'integer':
           new DigitalKeyboard({el: document.querySelector('#app'), type: keyboardType, inputValue: inputValue});
-          expect(document.querySelectorAll('#keyboardBox button')[9].innerHTML).be.equal('清空');
+          expect(document.querySelectorAll('button')[9].innerHTML).be.equal('清空');
           break;
         case 'phone':
           new DigitalKeyboard({el: document.querySelector('#app'), type: keyboardType, inputValue: inputValue});
-          expect(document.querySelectorAll('#keyboardBox button')[9].innerHTML).be.equal('清空');
+          expect(document.querySelectorAll('button')[9].innerHTML).be.equal('清空');
           break;
         case 'idcard':
           new DigitalKeyboard({el: document.querySelector('#app'), type: keyboardType, inputValue: inputValue});
-          expect(document.querySelectorAll('#keyboardBox button')[9].innerHTML).be.equal('X');
+          expect(document.querySelectorAll('button')[9].innerHTML).be.equal('X');
           break;
         default:
           new DigitalKeyboard({el: document.querySelector('#app'), type: keyboardType, inputValue: inputValue});
-          expect(document.querySelectorAll('#keyboardBox button')[9].innerHTML).be.equal('.');
+          expect(document.querySelectorAll('button')[9].innerHTML).be.equal('.');
           break;
       }
     });
 
     it('get correct value', function () {
-      document.querySelectorAll('#keyboardBox button').forEach(function (itemKey, index) {
+      document.querySelectorAll('button').forEach(function (itemKey, index) {
         itemKey.click();
         let action = itemKey.getAttribute('data-action'), content = itemKey.getAttribute('data-content');
         switch (action) {
@@ -90,6 +90,8 @@ describe('mocha tests', function () {
         }
         expect(currentValue).to.be.equal(tempValue);
       });
+
+      document.querySelector('#app').innerHTML = '';
     });
 
   });
