@@ -42,7 +42,20 @@ class DigitalKeyboard {
             }
             break;
           default:
-            this.value += content;
+            let _value = this.value + content;
+            let _valueArr = _value.split('.');
+            let integerDigits = _valueArr[0] && _valueArr[0].length || 0;
+            let decimalDigits = _valueArr[1] && _valueArr[1].length || 0;
+            let integerPass = !options.integerDigits || options.integerDigits >= integerDigits;
+            let decimalPass = !options.decimalDigits || options.decimalDigits >= decimalDigits;
+            if(_valueArr.length == 1 && integerPass) {
+              this.value += content;
+            }else if(_valueArr.length == 2 && decimalPass) {
+              this.value += content;
+            }else {
+              this.value = this.value;
+            }
+
         }
         break;
     }
