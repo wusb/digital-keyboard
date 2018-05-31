@@ -11,7 +11,7 @@
 - 原生js开发、不依赖任何框架和库的轻量级移动端数字键盘
 - 支持身份证、手机号、整数、小数多类型输入
 - API简洁，非常好上手
-- 开发总结：[从0开始发布一个无依赖、高质量的键盘npm](https://github.com/simbawus/blog/issues/12)
+- 开发总结：[从0开始发布一个无依赖、高质量的npm](https://github.com/simbawus/blog/issues/12)
 
 [![Example](https://i.loli.net/2018/05/16/5afc5086957b3.gif)](https://i.loli.net/2018/05/16/5afc5086957b3.gif)
 

@@ -11,7 +11,7 @@
 - Develop with native javascript, doesn't rely on any frameworks and libraries.
 - Support ID card, mobile number, integer, decimal, etc.
 - Easy API, easy use.
-- Development summary：[How to release a Digital Keyboard npm package](https://github.com/simbawus/blog/issues/12).
+- Development summary：[How to release a npm package](https://github.com/simbawus/blog/issues/12).
 
 [![Example](https://i.loli.net/2018/05/16/5afc5086957b3.gif)](https://i.loli.net/2018/05/16/5afc5086957b3.gif)
 
@@ -105,8 +105,8 @@ new DigitalKeyboard(
 
 ```jsx
 import React from 'react';
-import DigitalKeyboard from "digital-keyboard";
-import s from './digitalKeyboard.scss;
+import DigitalKeyboard from 'digital-keyboard';
+import s from './digitalKeyboard.scss';
 
 class KeyboardPage extends React.Component {
 
