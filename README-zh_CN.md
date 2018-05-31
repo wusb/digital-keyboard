@@ -38,14 +38,14 @@
 
 ## 属性
 
-| Property        | Type     | Default      | Description           |
-| :-------------- | :------- | :----------- | :-------------------- |
-| el | DOM |  | 键盘父节点  |
-| className | String |  | 外部传入可控制键盘样式的class |
-| type  | String   | decimal | 键盘类型：decimal小数，integer整数，phone手机号，idcard身份证 |
-| inputValue    | Function   |  | 键盘输入返回值      |
-| integerDigits | Number |  |  限制整数位数 |
-| decimalDigits | Number |  |  限制小数位数 |
+| Property      | Type     | Default | Description                              |
+| :------------ | :------- | :------ | :--------------------------------------- |
+| el            | DOM      |         | 键盘父节点                                    |
+| className     | String   |         | 外部传入可控制键盘样式的class                        |
+| type          | String   | decimal | 键盘类型：decimal小数，integer整数，phone手机号，idcard身份证 |
+| inputValue    | Function |         | 键盘输入返回值                                  |
+| integerDigits | Number   |         | 限制整数位数                                   |
+| decimalDigits | Number   |         | 限制小数位数                                   |
 
 ## 开始上手
 
@@ -186,6 +186,52 @@ export default {
 }
 </script>
 ```
+- **Angular**
+
+```typescript
+// Online-demo: https://stackblitz.com/edit/angular-hkexnq
+import { Component, ViewChild, OnInit, ViewEncapsulation} from '@angular/core';
+import DigitalKeyboard from "digital-keyboard";
+
+@Component({
+  selector: 'my-app',
+  template: `
+   <div #keyboard></div>
+  `,
+  styles: [`
+    .container {
+        color: #333;
+    }
+  `],
+  encapsulation: ViewEncapsulation.None
+})
+export class AppComponent  implements OnInit{
+
+  @ViewChild('keyboard') keyboard;
+
+  ngOnInit(){
+    this._renderDigitalKeyboard();
+  }
+
+  _renderDigitalKeyboard(){
+    return new DigitalKeyboard (
+          {
+            el: this.keyboard.nativeElement,
+            className: 'container',
+            type: 'number',
+            inputValue: this.inputValue,
+            integerDigits: 4,
+            decimalDigits: 2
+          }
+        );
+  }
+
+  inputValue(value) {
+    console.log(value); //DigitalKeyboard return value
+  }
+}
+```
+
 ## 如何贡献
 
 欢迎每个人为这个项目做出贡献。可以从查看我们[未解决的问题](https://github.com/simbawus/DigitalKeyboard/issues)、[提交新问题](https://github.com/simbawus/DigitalKeyboard/issues/new?labels=bug)或[提出新功能](https://github.com/simbawus/DigitalKeyboard/issues/new?labels=enhancement)入手，参与讨论投票您喜欢或不喜欢的问题。
