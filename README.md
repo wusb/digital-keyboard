@@ -38,14 +38,14 @@
 
 ## PropTypes
 
-| Property        | Type     | Default      | Description           |
-| :-------------- | :------- | :----------- | :-------------------- |
-| el | DOM |  | parent node  |
-| className | String |  | additonal class to control keyboard's style |
-| type  | String   | decimal | decimal，integer，phone，idcard |
-| inputValue    | Function   |  |  return keyboard value      |
-| integerDigits | Number |  | limit integer digits |
-| decimalDigits | Number |  | limit decimal digits |
+| Property      | Type     | Default | Description                              |
+| :------------ | :------- | :------ | :--------------------------------------- |
+| el            | DOM      |         | parent node                              |
+| className     | String   |         | additonal class to control keyboard's style |
+| type          | String   | decimal | decimal，integer，phone，idcard             |
+| inputValue    | Function |         | return keyboard value                    |
+| integerDigits | Number   |         | limit integer digits                     |
+| decimalDigits | Number   |         | limit decimal digits                     |
 
 ## Getting Started
 
@@ -186,6 +186,52 @@ export default {
 }
 </script>
 ```
+* **Angular**
+
+```typescript
+// Online-demo: https://stackblitz.com/edit/angular-hkexnq
+import { Component, ViewChild, OnInit, ViewEncapsulation} from '@angular/core';
+import DigitalKeyboard from "digital-keyboard";
+
+@Component({
+  selector: 'my-app',
+  template: `
+   <div #keyboard></div>
+  `,
+  styles: [`
+    .container {
+        color: #333;
+    }
+  `],
+  encapsulation: ViewEncapsulation.None
+})
+export class AppComponent  implements OnInit{
+
+  @ViewChild('keyboard') keyboard;
+
+  ngOnInit(){
+    this._renderDigitalKeyboard();
+  }
+
+  _renderDigitalKeyboard(){
+    return new DigitalKeyboard (
+          {
+            el: this.keyboard.nativeElement,
+            className: 'container',
+            type: 'number',
+            inputValue: this.inputValue,
+            integerDigits: 4,
+            decimalDigits: 2
+          }
+        );
+  }
+
+  inputValue(value) {
+    console.log(value); //DigitalKeyboard return value
+  }
+}
+```
+
 ## How to Contribute
 
 Anyone and everyone is welcome to contribute to this project. The best way to start is by checking our [open issues](https://github.com/simbawus/DigitalKeyboard/issues),[submit a new issues](https://github.com/simbawus/DigitalKeyboard/issues/new?labels=bug) or [feature request](https://github.com/simbawus/DigitalKeyboard/issues/new?labels=enhancement), participate in discussions, upvote or downvote the issues you like or dislike.
