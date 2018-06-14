@@ -62,7 +62,9 @@ describe('mocha tests', function () {
 
     it('get correct value', function () {
       document.querySelectorAll('button').forEach(function (itemKey, index) {
-        itemKey.click();
+        let event  = document.createEvent('HTMLEvents');
+        event.initEvent('touchend', true, true);
+        itemKey.dispatchEvent(event);
         let action = itemKey.getAttribute('data-action'), content = itemKey.getAttribute('data-content');
         switch (action) {
           case 'delete':
@@ -88,6 +90,7 @@ describe('mocha tests', function () {
             }
             break;
         }
+
         expect(currentValue).to.be.equal(tempValue);
       });
 
