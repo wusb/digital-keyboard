@@ -21,5 +21,3 @@ let Keyboard = new DigitalKeyboard({
   integerDigits: 4,
   decimalDigits: 2
 });
-
-console.log(Keyboard);
