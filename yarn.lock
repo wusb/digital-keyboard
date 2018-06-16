@@ -2409,9 +2409,9 @@ escodegen@^1.9.0:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-config-booheefe@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-booheefe/-/eslint-config-booheefe-1.0.0.tgz#690da3d7b5e2404b528d4d077e9ba5a2a3083453"
+eslint-config-booheefe@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-booheefe/-/eslint-config-booheefe-1.1.0.tgz#94d04e9ac86b059e2e5b62b06f27056f3dd05050"
 
 eslint-scope@^3.7.1:
   version "3.7.1"
