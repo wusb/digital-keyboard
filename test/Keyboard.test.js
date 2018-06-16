@@ -1,6 +1,5 @@
-const expect = require('chai').expect;
-const {JSDOM} = require('jsdom');
-const {window} = new JSDOM(`<!DOCTYPE html>
+const expect = require('chai').expect, {JSDOM} = require('jsdom'),
+  {window} = new JSDOM(`<!DOCTYPE html>
   <html>
   <head>
       <meta charset="UTF-8">
@@ -26,19 +25,19 @@ function propagateToGlobal(window) {
 
 const DigitalKeyboard = require('../build/Keyboard').default;
 
-describe('mocha tests', function () {
+describe('mocha tests', function() {
 
   let inputValue, currentValue = '', tempValue = '';
 
-  before(function () {
-    inputValue = function (value) {
+  before(function() {
+    inputValue = function(value) {
       document.querySelector('#values').innerHTML = value;
       currentValue = value;
     };
   });
 
-  ['idcard', 'integer', 'phone', 'normal'].forEach(function (keyboardType, index) {
-    it('render correct', function () {
+  ['idcard', 'integer', 'phone', 'normal'].forEach(function(keyboardType) {
+    it('render correct', function() {
       tempValue = '';
       switch (keyboardType) {
         case 'integer':
@@ -60,9 +59,9 @@ describe('mocha tests', function () {
       }
     });
 
-    it('get correct value', function () {
-      document.querySelectorAll('button').forEach(function (itemKey, index) {
-        let event  = document.createEvent('HTMLEvents');
+    it('get correct value', function() {
+      document.querySelectorAll('button').forEach(function(itemKey) {
+        let event = document.createEvent('HTMLEvents');
         event.initEvent('touchend', true, true);
         itemKey.dispatchEvent(event);
         let action = itemKey.getAttribute('data-action'), content = itemKey.getAttribute('data-content');

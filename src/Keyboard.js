@@ -1,7 +1,7 @@
 import s from './Keyboard.scss';
 
 class DigitalKeyboard {
-  constructor(options = {}){
+  constructor(options = {}) {
     this.value = '';
     this.options = {
 
@@ -12,10 +12,10 @@ class DigitalKeyboard {
     this.init(options);
   }
 
-  handleClick(action, content){
+  handleClick(action, content) {
     let { options } = this;
 
-    switch(action){
+    switch (action) {
       case 'delete':
         this.value = this.value.substr(0, this.value.length - 1);
         break;
@@ -23,21 +23,21 @@ class DigitalKeyboard {
         this.value = '';
         break;
       default:
-        switch (options.type){
+        switch (options.type) {
           case 'phone':
-            if(this.value.length < 11){
+            if (this.value.length < 11) {
               this.value += content;
             }
             break;
           case 'idcard':
-            if(this.value.length < 18){
+            if (this.value.length < 18) {
               this.value += content;
             }
             break;
           case 'integer':
-            if(options.integerDigits && options.integerDigits <= this.value.length) {
+            if (options.integerDigits && options.integerDigits <= this.value.length) {
               this.value = this.value;
-            }else {
+            } else {
               this.value += content;
             }
             break;
@@ -48,11 +48,11 @@ class DigitalKeyboard {
             let decimalDigits = _valueArr[1] && _valueArr[1].length || 0;
             let integerPass = !options.integerDigits || options.integerDigits >= integerDigits;
             let decimalPass = !options.decimalDigits || options.decimalDigits >= decimalDigits;
-            if(_valueArr.length == 1 && integerPass) {
+            if (_valueArr.length === 1 && integerPass) {
               this.value += content;
-            }else if(_valueArr.length == 2 && decimalPass) {
+            } else if (_valueArr.length === 2 && decimalPass) {
               this.value += content;
-            }else {
+            } else {
               this.value = this.value;
             }
 
@@ -63,13 +63,13 @@ class DigitalKeyboard {
     options.inputValue(this.value);
   }
 
-  initKeys(type){
+  initKeys(type) {
 
     let typeKey = {};
-    switch (typeKey){
+    switch (typeKey) {
 
     }
-    switch (type){
+    switch (type) {
       case 'integer':
         typeKey = {
           content: '清空',
@@ -97,47 +97,47 @@ class DigitalKeyboard {
     }
 
     this.items = [
-        {
-          'content': '1',
-          'action': 'value',
-        }, {
-          'content': '2',
-          'action': 'value',
-        }, {
-          'content': '3',
-          'action': 'value',
-        }, {
-          'content': '4',
-          'action': 'value',
-        }, {
-          'content': '5',
-          'action': 'value',
-        }, {
-          'content': '6',
-          'action': 'value',
-        }, {
-          'content': '7',
-          'action': 'value',
-        }, {
-          'content': '8',
-          'action': 'value',
-        }, {
-          'content': '9',
-          'action': 'value',
-        }, typeKey, {
-          'content': '0',
-          'action': 'value',
-        }, {
-          'content': '&larr;',
-          'action': 'delete',
-        }
+      {
+        'content': '1',
+        'action': 'value'
+      }, {
+        'content': '2',
+        'action': 'value'
+      }, {
+        'content': '3',
+        'action': 'value'
+      }, {
+        'content': '4',
+        'action': 'value'
+      }, {
+        'content': '5',
+        'action': 'value'
+      }, {
+        'content': '6',
+        'action': 'value'
+      }, {
+        'content': '7',
+        'action': 'value'
+      }, {
+        'content': '8',
+        'action': 'value'
+      }, {
+        'content': '9',
+        'action': 'value'
+      }, typeKey, {
+        'content': '0',
+        'action': 'value'
+      }, {
+        'content': '&larr;',
+        'action': 'delete'
+      }
     ];
   }
 
-  _renderKeyboard(container){
+  _renderKeyboard(container) {
     let className = '';
-    let keyboards = this.items.map((item, index) => {
-      switch (item.content){
+    let keyboards = this.items.map((item) => {
+      switch (item.content) {
         case 'X':
           className = s.keyX;
           break;
@@ -156,17 +156,17 @@ class DigitalKeyboard {
     });
 
     const keyboardBox = document.createElement('div');
-          keyboardBox.className = `${s.keyboard} ${this.options.className}`;
-          keyboardBox.innerHTML = keyboards.join('');
-          keyboardBox.addEventListener('touchend', (e) => {
-            let {action, content} = e.target.dataset;
-            this.handleClick(action, content);
-          });
+    keyboardBox.className = `${s.keyboard} ${this.options.className}`;
+    keyboardBox.innerHTML = keyboards.join('');
+    keyboardBox.addEventListener('touchend', (e) => {
+      let {action, content} = e.target.dataset;
+      this.handleClick(action, content);
+    });
 
     container.appendChild(keyboardBox);
   }
 
-  init(options){
+  init(options) {
     this.initKeys(options.type);
     this._renderKeyboard(options.el);
   }

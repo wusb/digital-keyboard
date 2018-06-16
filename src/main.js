@@ -2,10 +2,9 @@ import DigitalKeyboard from './Keyboard';
 // import DigitalKeyboard from 'digital-keyboard';
 import s from './main.scss';
 
-function inputValue(value){
+function inputValue(value) {
   document.querySelector('#values').innerHTML = value;
 }
-
 
 document.querySelector('#clear').addEventListener('click', clearValue);
 
