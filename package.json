@@ -23,8 +23,9 @@
     "coveralls": "^3.0.1",
     "cross-env": "^5.1.5",
     "css-loader": "^0.28.9",
-    "digital-keyboard": "^1.0.7",
+    "digital-keyboard": "^1.1.0",
     "eslint": "^4.19.1",
+    "eslint-config-booheefe": "^1.0.0",
     "istanbul": "^0.4.5",
     "jsdom": "^11.10.0",
     "mocha": "^5.1.1",
@@ -38,7 +39,7 @@
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --mode production --config  ./config/webpack/webpack.config.js",
-    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open 'Google Chrome' --config ./config/webpack/webpack.config.js",
+    "start": "yarn && cross-env NODE_ENV=development webpack-dev-server --mode development --open 'Google Chrome' --config ./config/webpack/webpack.config.js",
     "test": "node ./node_modules/mocha/bin/mocha --compilers js:babel-core/register ./test/Keyboard.test.js",
     "cover": "istanbul cover ./node_modules/mocha/bin/_mocha",
     "coveralls": "yarn cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls"

@@ -2198,9 +2198,9 @@ diffie-hellman@^5.0.0:
     miller-rabin "^4.0.0"
     randombytes "^2.0.0"
 
-digital-keyboard@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/digital-keyboard/-/digital-keyboard-1.0.3.tgz#0dd926a8299897d592a6ec1ae2f053b10f3773d6"
+digital-keyboard@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/digital-keyboard/-/digital-keyboard-1.1.0.tgz#1ea6767696bd77c1edd6943cf8276386cc3ce279"
 
 dir-glob@^2.0.0:
   version "2.0.0"
@@ -2408,6 +2408,10 @@ escodegen@^1.9.0:
     optionator "^0.8.1"
   optionalDependencies:
     source-map "~0.6.1"
+
+eslint-config-booheefe@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-booheefe/-/eslint-config-booheefe-1.0.0.tgz#690da3d7b5e2404b528d4d077e9ba5a2a3083453"
 
 eslint-scope@^3.7.1:
   version "3.7.1"
