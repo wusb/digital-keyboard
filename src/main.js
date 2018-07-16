@@ -15,8 +15,9 @@ function clearValue() {
 let Keyboard = new DigitalKeyboard({
   el: document.querySelector('#app'),
   className: s.container,
-  type: '',
+  type: 'integer',
   inputValue: inputValue,
   integerDigits: 4,
-  decimalDigits: 2
+  decimalDigits: 2,
+  language: 'english'
 });
