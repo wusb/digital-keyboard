@@ -4,7 +4,8 @@ class DigitalKeyboard {
   constructor(options = {}) {
     this.value = '';
     this.options = {
-
+      language: 'chinese',
+      clearName: '清空'
     };
 
     Object.assign(this.options, options);
@@ -63,8 +64,24 @@ class DigitalKeyboard {
     options.inputValue(this.value);
   }
 
-  initKeys(type) {
+  handleClearName() {
+    const { language } = this.options;
+    let clearName = '清空';
+    switch (language) {
+      case 'chinese':
+        clearName = '清空';
+        break;
+      case 'english':
+        clearName = 'Clear';
+        break;
+      default:
+        clearName = '清空';
+    }
+    this.options.clearName = clearName;
+  }
 
+  initKeys(type) {
+    const { clearName } = this.options;
     let typeKey = {};
     switch (typeKey) {
 
@@ -72,13 +89,13 @@ class DigitalKeyboard {
     switch (type) {
       case 'integer':
         typeKey = {
-          content: '清空',
+          content: clearName,
           action: 'clear'
         };
         break;
       case 'phone':
         typeKey = {
-          content: '清空',
+          content: clearName,
           action: 'clear'
         };
         break;
@@ -135,13 +152,14 @@ class DigitalKeyboard {
   }
 
   _renderKeyboard(container) {
+    const { clearName } = this.options;
     let className = '';
     let keyboards = this.items.map((item) => {
       switch (item.content) {
         case 'X':
           className = s.keyX;
           break;
-        case '清空':
+        case clearName:
           className = s.keyClear;
           break;
         case '&larr;':
@@ -167,6 +185,7 @@ class DigitalKeyboard {
   }
 
   init(options) {
+    this.handleClearName();
     this.initKeys(options.type);
     this._renderKeyboard(options.el);
   }
