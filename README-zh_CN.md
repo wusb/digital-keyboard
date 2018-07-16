@@ -43,6 +43,7 @@
 | el            | DOM      |         | 键盘父节点                                    |
 | className     | String   |         | 外部传入可控制键盘样式的class                        |
 | type          | String   | decimal | 键盘类型：decimal小数，integer整数，phone手机号，idcard身份证 |
+| language      | String   | chinese | 语言：chinese，english                         |
 | inputValue    | Function |         | 键盘输入返回值                                  |
 | integerDigits | Number   |         | 限制整数位数                                   |
 | decimalDigits | Number   |         | 限制小数位数                                   |

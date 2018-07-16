@@ -43,6 +43,7 @@
 | el            | DOM      |         | parent node                              |
 | className     | String   |         | additonal class to control keyboard's style |
 | type          | String   | decimal | decimal，integer，phone，idcard             |
+| language      | String   | chinese | chinese，english                         |
 | inputValue    | Function |         | return keyboard value                    |
 | integerDigits | Number   |         | limit integer digits                     |
 | decimalDigits | Number   |         | limit decimal digits                     |
