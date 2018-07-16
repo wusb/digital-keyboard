@@ -42,6 +42,6 @@
     "start": "yarn && cross-env NODE_ENV=development webpack-dev-server --mode development --open 'Google Chrome' --config ./config/webpack/webpack.config.js",
     "test": "node ./node_modules/mocha/bin/mocha --compilers js:babel-core/register ./test/Keyboard.test.js",
     "cover": "istanbul cover ./node_modules/mocha/bin/_mocha",
-    "coveralls": "yarn cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
+    "coveralls": "yarn cover --report lcovonly && cat ./coverage/lcov.info | coveralls"
   }
 }
