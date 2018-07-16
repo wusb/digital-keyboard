@@ -1,6 +1,6 @@
 {
   "name": "digital-keyboard",
-  "version": "1.1.1",
+  "version": "1.2.1",
   "main": "build/Keyboard.js",
   "repository": "https://github.com/simbawus/DigitalKeyboard.git",
   "author": "Simbawu <connect@simbawu.com>",
