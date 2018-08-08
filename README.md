@@ -1,10 +1,10 @@
 # Digital Keyboard
 
-[![Build Status](https://travis-ci.org/simbawus/DigitalKeyboard.svg?branch=master)](https://travis-ci.org/simbawus/DigitalKeyboard)
-[![Coverage Status](https://coveralls.io/repos/github/simbawus/DigitalKeyboard/badge.svg?branch=master)](https://coveralls.io/github/simbawus/DigitalKeyboard?branch=master)
+[![Build Status](https://travis-ci.org/simbawus/digital-keyboard.svg?branch=master)](https://travis-ci.org/simbawus/digital-keyboard)
+[![Coverage Status](https://coveralls.io/repos/github/simbawus/digital-keyboard/badge.svg?branch=master)](https://coveralls.io/github/simbawus/digital-keyboard?branch=master)
 [![npm](https://img.shields.io/npm/v/digital-keyboard.svg)](https://www.npmjs.com/package/digital-keyboard)
 [![npm](https://img.shields.io/npm/dt/digital-keyboard.svg)](https://www.npmjs.com/package/digital-keyboard)
-[![GitHub license](https://img.shields.io/github/license/simbawus/DigitalKeyboard.svg)](https://github.com/simbawus/DigitalKeyboard/blob/master/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/simbawus/digital-keyboard.svg)](https://github.com/simbawus/digital-keyboard/blob/master/LICENSE)
 
 ###### [中文README](README-zh_CN.md)
 
