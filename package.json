@@ -2,7 +2,7 @@
   "name": "digital-keyboard",
   "version": "1.2.2",
   "main": "build/Keyboard.js",
-  "repository": "https://github.com/simbawus/DigitalKeyboard.git",
+  "repository": "https://github.com/simbawus/digital-keyboard.git",
   "author": "Simbawu <connect@simbawu.com>",
   "description": "DigitalKeyboard Component",
   "keywords": [
