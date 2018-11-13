@@ -235,9 +235,9 @@ export class AppComponent  implements OnInit{
 
 ## How to Contribute
 
-Anyone and everyone is welcome to contribute to this project. The best way to start is by checking our [open issues](https://github.com/simbawus/DigitalKeyboard/issues),[submit a new issues](https://github.com/simbawus/DigitalKeyboard/issues/new?labels=bug) or [feature request](https://github.com/simbawus/DigitalKeyboard/issues/new?labels=enhancement), participate in discussions, upvote or downvote the issues you like or dislike.
+Anyone and everyone is welcome to contribute to this project. The best way to start is by checking our [open issues](https://github.com/simbawus/digital-keyboard/issues),[submit a new issues](https://github.com/simbawus/digital-keyboard/issues/new?labels=bug) or [feature request](https://github.com/simbawus/digital-keyboard/issues/new?labels=enhancement), participate in discussions, upvote or downvote the issues you like or dislike.
 
 ## License
 
-[**The MIT License**](http://opensource.org/licenses/MIT).
+[**The MIT License**](LICENSE).
 
